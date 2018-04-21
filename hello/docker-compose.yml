@@ -1,0 +1,17 @@
+version: '3'
+services:
+  redis:
+    image: redis
+    ports:
+    - 6379:6379
+
+  rabbitmq:
+    image: rabbitmq:alpine
+  # command: "rabbitmq-plugins enable rabbitmq_management"
+    environment:
+      RABBITMQ_DEFAULT_USER: "lori"
+      RABBITMQ_DEFAULT_PASS: "lori"
+    ports:
+    - 5672:5672
+    - 15672:15672
+    - 8081:8080
